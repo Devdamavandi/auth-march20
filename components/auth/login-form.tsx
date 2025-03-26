@@ -16,6 +16,7 @@ import { FormError } from "./form-error"
 import { FormSuccess } from "./form-success"
 import { useRouter } from "next/navigation"
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
+import { SimpleLayout } from "../layout/simple-layout"
 
 
 
@@ -58,6 +59,7 @@ export const LoginForm = () => {
         }
     }
     return (
+
         <CardWrapper
             headerTitle="Login"
             headerLabel="here you can Signin to Your Account"
@@ -115,6 +117,7 @@ export const LoginForm = () => {
                 </form>
             </Form>
         </CardWrapper>
+
     )
 }
 

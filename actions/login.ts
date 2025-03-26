@@ -29,6 +29,10 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
         return { error: 'This Email is associated with a social login. Please use Google or Github to log in.' }
     }
 
+    if (!existingUser.emailVerified) {
+        return { error: 'Your email is not verified yet! Check your inbox for the verification link.' }
+    }
+
     // Validate the password
     const passwordsMatch = await bcrypt.compare(password, existingUser.password)
     if (!passwordsMatch) {

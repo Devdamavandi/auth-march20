@@ -1,13 +1,20 @@
 
 
+import { auth } from "@/auth"
+import DashboardClient from "@/components/dashboard/dashboard-client"
 
 
-const DashboardPage = () => {
-    return (
-        <div>
-            This is dashboard Page
-        </div>
-    );
+const DashboardPage = async () => {
+
+    const session = await auth()
+    const user = session?.user
+
+    return user ? <DashboardClient user={{
+        name: user.name || undefined,
+        email: user.email || undefined,
+        role: user.role || undefined
+    }} /> : <div>Loading...</div>
 }
 
-export default DashboardPage;
+
+export default DashboardPage

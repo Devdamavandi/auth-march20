@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import LayoutClient from "@/components/layout-client";
+
 
 
 export const metadata: Metadata = {
@@ -13,13 +15,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
+
       <body
-        className='flex justify-center items-center h-screen bg-gradient-to-r from-blue-500 to-purple-500'
+        className='min-h-screen bg-gray-50'
       >
-        {children}
-      </body>
-    </html>
+        <LayoutClient>
+          {children}
+        </LayoutClient>
+      </body >
+    </html >
   );
 }
