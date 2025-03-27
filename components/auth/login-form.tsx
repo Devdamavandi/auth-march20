@@ -16,7 +16,6 @@ import { FormError } from "./form-error"
 import { FormSuccess } from "./form-success"
 import { useRouter } from "next/navigation"
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
-import { SimpleLayout } from "../layout/simple-layout"
 
 
 
