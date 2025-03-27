@@ -56,6 +56,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 
             return token
         },
+        authorized({ auth }) {
+            return !!auth?.user
+        },
     },
     adapter: PrismaAdapter(prisma),
     session: { strategy: "jwt" },
